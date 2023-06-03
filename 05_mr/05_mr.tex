@@ -55,15 +55,58 @@
     \tableofcontents
 \end{frame}
 
-
+%\begin{frame}[c]
+   % \begin{figure}
+      %  \centering
+       % \subcaptionbox{\longtime{}-weighted MRI}{\includegraphics[height=5cm]{images/5009-dkfz-t1}}
+        %\subcaptionbox{\transtime{}-weighted MRI}{\includegraphics[height=5cm]{images/5009-dkfz-t2}}
+    %\end{figure}
+%\end{frame}
 
 \section{Introduction}% (fold)
 \label{sec:introduction}
+
+\begin{frame}[c]{MR Nobel Prize List}
+      \begin{itemize}
+%      		\small 
+                 \item Otto Stern, USA: Nobel Prize in Physics 1943
+       		\item Isidor I. Rabi, USA: Nobel Prize in Physics 1944
+     		\item Felix Bloch, USA and Edward M. Purcell, USA: Nobel Prize in Physics 1952
+     		\item Richard R. Ernst, Switzerland: Nobel Prize in Chemistry 1991
+     		\item Kurt Wüthrich, Switzerland: Nobel Prize in Chemistry 2002
+     		\item Paul C. Lauterbur, USA and Peter Mansfield, United Kingdom: Nobel Prize in Physiology or Medicine 2003
+	 \end{itemize}
+  
+   \begin{figure}
+     \centering
+          \includegraphics[height=1.5cm]{images/Nobel_Prize}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}[c]{MR Nobel Prize List}
+     \begin{figure}
+        \centering
+        \includegraphics[height=6.5cm]{images/lauterbur1973}
+        \includegraphics[height=1.5cm]{images/Nobel_Prize}
+    \end{figure}
+\end{frame}
 
 \begin{frame}
     \begin{center}
         \includegraphics[height=0.9\textheight]{images/spectra}
     \end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Components of an MRI Scanner}
+	
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/mri_scanner}
+	\end{center}
+	
+	{\flushright
+	\tiny Image source: \url{http://www.magnet.fsu.edu}}
 \end{frame}
 
 \begin{frame}[c]{CT vs.~MRI}
@@ -74,6 +117,7 @@
         \begin{block}{CT}
             \begin{itemize}
                 \small
+               % \item Just doing a test modification
                 \item High radiation dose
                 \item 1 contrast: x-ray attenuation
                 \item Good bone contrast
@@ -101,16 +145,18 @@
     \end{columns}
 
 \end{frame}
+
 \begin{frame}[c]{CT vs.~MRI}
     \begin{figure}
         \centering
-        \subcaptionbox{CT*}{\includegraphics[height=3.3cm]{images/vhm-brainct}}
-        \subcaptionbox{\longtime{}-weighted MRI}{\includegraphics[height=3.3cm]{images/5009-dkfz-t1}}
-        \subcaptionbox{\transtime{}-weighted MRI}{\includegraphics[height=3.3cm]{images/5009-dkfz-t2}}
+        \subcaptionbox{CT*}{\includegraphics[height=4.5cm]{images/vhm-brainct}}
+        \subcaptionbox{\longtime{}-weighted MRI}{\includegraphics[height=4.5cm]{images/5009-dkfz-t1}}
+        \subcaptionbox{\transtime{}-weighted MRI}{\includegraphics[height=4.5cm]{images/5009-dkfz-t2}}
     \end{figure}
 
     {\scriptsize *Source: Visible Human Project}
 \end{frame}
+
 
 % section introduction (end)
 
@@ -1258,7 +1304,8 @@ Behavior of a compass needle subjected to the earth's magnetic field
 \begin{frame}{Longitudinal Magnetization Recovery}
 
     \begin{center}
-        \input{tikz/longitudinal_magnetization_recovery.tikz}
+        %\input{tikz/longitudinal_magnetization_recovery.tikz}
+        \includegraphics[height=0.6\textheight]{images/relaxation_longitudinal}
     \end{center}
 
     \begin{itemize}
@@ -1270,7 +1317,8 @@ Behavior of a compass needle subjected to the earth's magnetic field
 \begin{frame}{Transversal Magnetization Decay (in theory)}
 
     \begin{center}
-        \input{tikz/transverse_magnetization_recovery.tikz}
+        %\input{tikz/transverse_magnetization_recovery.tikz}
+        \includegraphics[height=0.6\textheight]{images/relaxation_transversal}
     \end{center}
 
     \begin{itemize}
@@ -1553,7 +1601,8 @@ Behavior of a compass needle subjected to the earth's magnetic field
 
     \begin{columns}[t,onlytextwidth]
         \column{.7\linewidth}
-        \input{tikz/longitudinal_magnetization_recovery_2tissues.tikz}
+        %\input{tikz/longitudinal_magnetization_recovery_2tissues.tikz}
+        \includegraphics[height=0.6\textheight]{images/weighting_t1}
 
         \begin{itemize}
             \item \textbf{Short TR:} Not all tissues fully recover magnetization before new measurements
@@ -1571,7 +1620,8 @@ Behavior of a compass needle subjected to the earth's magnetic field
 
     \begin{columns}[t,onlytextwidth]
         \column{.7\linewidth}
-        \input{tikz/transverse_magnetization_recovery_2tissues.tikz}
+        %\input{tikz/transverse_magnetization_recovery_2tissues.tikz}
+        \includegraphics[height=0.6\textheight]{images/weighting_t2}
 
         \begin{itemize}
             \item \textbf{Long TE:} Allow differences in transversal magnetization decay to manifest
@@ -1589,7 +1639,8 @@ Behavior of a compass needle subjected to the earth's magnetic field
 
     \begin{columns}[t,onlytextwidth]
         \column{.7\linewidth}
-        \input{tikz/pd_2tissues.tikz}
+        %\input{tikz/pd_2tissues.tikz}
+        \includegraphics[height=0.6\textheight]{images/weighting_pd}
 
         \begin{itemize}
             \item \textbf{Long TR:} No contrast due to different $\longtime$
@@ -1627,5 +1678,14 @@ Behavior of a compass needle subjected to the earth's magnetic field
 % subsection relaxation_and_contrast (end)
 
 % section nuclear_magnetic_resonance_nmr (end)
+
+\section{Imaging}% (fold)
+\label{sec:imaging}
+
+\begin{frame}{Imaging}
+
+Next slide deck :-)
+
+\end{frame}
 
 \end{document}
