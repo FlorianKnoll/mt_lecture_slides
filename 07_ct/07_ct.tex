@@ -909,7 +909,7 @@
 			      \item Length of intersection
 			      \item Area of intersection (rays with non-zero thickness)
 		      \end{itemize}
-		\item $\mat{A}^{-1} \vec{p}$ corresponds to the inverse Radon transform, $\mat{A}^\top \vec{p}$ to the dual
+		\item $\mat{A}^{-1} \vec{p}$ corresponds to the inverse Radon transform
 	\end{itemize}
 \end{frame}
 
@@ -943,109 +943,109 @@
 
 \end{frame}
 
-\begin{frame}
-	\frametitle{Kaczmarz Method}
-
-	\begin{figure}[tbp]
-		\centering
-		\includegraphics[height=0.8\textheight]{images/algebraic_2}
-		\caption{Kaczmarz iterations in 2-D space.}
-		\label{fig:ct_algebraic_2}
-	\end{figure}
-
-\end{frame}
-
-\begin{frame}
-	\frametitle{Geometry Basics}
-
-	\begin{itemize}
-		\item 2-D case: point $\vec x$, line $\vec n^\top\vec c = d$ ($\vec c$ is a point on the line)
-		\item Orthogonal projection $\vec{x'}$ of $\vec{x}$ is along normal $\vec n$:
-
-		      \begin{equation}
-			      \label{eqn:ct_algebraic_2}
-			      \vec{x'} = \vec{x} + \lambda \vec{n}
-		      \end{equation}
-
-		\item $\vec{x'}$ must be on the line: $\vec{n}^\top\vec{x'} = d$
-
-		\item Plug this into Eq.~\ref{eqn:ct_algebraic_2}:
-
-		      \begin{eqnarray}
-			      \vec{n}^\top(\vec{x} + \lambda \vec{n}) = d\\
-			      \lambda = \frac{d-\vec{n}^\top\vec{x}}{\vec{n}^\top\vec{n}}
-		      \end{eqnarray}
-
-		\item Substitute $\lambda$ in Eq.~\ref{eqn:ct_algebraic_2}:
-		      \begin{equation}
-			      \vec{x'} = \vec{x} + \frac{d - \vec{n}^\top \vec{x}}{\vec{n}^\top\vec{n}}\vec{n}
-		      \end{equation}
-
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-
-	\frametitle{Kaczmarz Update Formula}
-
-	\begin{itemize}
-
-		\item Reminder: We want to iteratively solve $\mat A \vec x = \vec p$
-
-		\item Update step (for each \emph{row} $a_i$ of $\mat A$):
-
-		      \begin{equation}
-			      \vec{x}^{k+1} = \vec{x}^k + \frac{p_i - \vec{a}_i\vec{x}^k}{\vec{a}_i\vec{a}^\top_i}\vec{a}^\top_i,
-		      \end{equation}
-
-		\item This is just our projection formula with different symbols! Compare:
-		      \begin{equation}
-			      \vec{x'} = \vec{x} + \frac{d - \vec{n}^\top \vec{x}}{\vec{n}^\top\vec{n}}\vec{n}
-		      \end{equation}
-
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}[t]{Notes on Kaczmarz}
-
-	\begin{itemize}
-		\setlength\itemsep{0.3cm}
-		\item Tanabe (1971): If a unique solution exists, Kaczmarz converges to it
-		\item But: No unique solution exists in over-determined and noisy systems
-		      \begin{itemize}
-			      \item[$\Rightarrow$] oscillation around the ideal solution
-		      \end{itemize}
-		\item Rate of convergence dependant on angles between lines
-		\item Orthogonalization methods can improve convergence
-		      \begin{itemize}
-			      \item Computationally demanding
-			      \item Amplifies noise
-		      \end{itemize}
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-	\frametitle{Extensions to ART}
-
-	\begin{itemize}
-		\item ``Ordered subsets'': Select sequence of projections in a clever way
-		\item Simultaneous ART (SART): Do multiple updates at the same time and use the centroid:
-
-		      \begin{equation}
-			      \vec{x}^{k+1} = \vec{x}^k + \lambda_k \sum_{i} u_{k,i} \frac{p_i - \vec{a}_i\vec{x}^k}{\vec{a}_i\vec{a}^\top_i}\vec{a}^\top_i
-		      \end{equation}
-		      with
-		      \begin{equation}
-			      \sum_{i}u_{k,i} = 1
-		      \end{equation}
-
-		\item Other optimization approaches: gradient descent, expectation-maximization, regularized reconstruction, \ldots
-	\end{itemize}
-
-\end{frame}
+%\begin{frame}
+%	\frametitle{Kaczmarz Method}
+%
+%	\begin{figure}[tbp]
+%		\centering
+%		\includegraphics[height=0.8\textheight]{images/algebraic_2}
+%		\caption{Kaczmarz iterations in 2-D space.}
+%		\label{fig:ct_algebraic_2}
+%	\end{figure}
+%
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Geometry Basics}
+%
+%	\begin{itemize}
+%		\item 2-D case: point $\vec x$, line $\vec n^\top\vec c = d$ ($\vec c$ is a point on the line)
+%		\item Orthogonal projection $\vec{x'}$ of $\vec{x}$ is along normal $\vec n$:
+%
+%		      \begin{equation}
+%			      \label{eqn:ct_algebraic_2}
+%			      \vec{x'} = \vec{x} + \lambda \vec{n}
+%		      \end{equation}
+%
+%		\item $\vec{x'}$ must be on the line: $\vec{n}^\top\vec{x'} = d$
+%
+%		\item Plug this into Eq.~\ref{eqn:ct_algebraic_2}:
+%
+%		      \begin{eqnarray}
+%			      \vec{n}^\top(\vec{x} + \lambda \vec{n}) = d\\
+%			      \lambda = \frac{d-\vec{n}^\top\vec{x}}{\vec{n}^\top\vec{n}}
+%		      \end{eqnarray}
+%
+%		\item Substitute $\lambda$ in Eq.~\ref{eqn:ct_algebraic_2}:
+%		      \begin{equation}
+%			      \vec{x'} = \vec{x} + \frac{d - \vec{n}^\top \vec{x}}{\vec{n}^\top\vec{n}}\vec{n}
+%		      \end{equation}
+%
+%	\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}
+%
+%	\frametitle{Kaczmarz Update Formula}
+%
+%	\begin{itemize}
+%
+%		\item Reminder: We want to iteratively solve $\mat A \vec x = \vec p$
+%
+%		\item Update step (for each \emph{row} $a_i$ of $\mat A$):
+%
+%		      \begin{equation}
+%			      \vec{x}^{k+1} = \vec{x}^k + \frac{p_i - \vec{a}_i\vec{x}^k}{\vec{a}_i\vec{a}^\top_i}\vec{a}^\top_i,
+%		      \end{equation}
+%
+%		\item This is just our projection formula with different symbols! Compare:
+%		      \begin{equation}
+%			      \vec{x'} = \vec{x} + \frac{d - \vec{n}^\top \vec{x}}{\vec{n}^\top\vec{n}}\vec{n}
+%		      \end{equation}
+%
+%	\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}[t]{Notes on Kaczmarz}
+%
+%	\begin{itemize}
+%		\setlength\itemsep{0.3cm}
+%		\item Tanabe (1971): If a unique solution exists, Kaczmarz converges to it
+%		\item But: No unique solution exists in over-determined and noisy systems
+%		      \begin{itemize}
+%			      \item[$\Rightarrow$] oscillation around the ideal solution
+%		      \end{itemize}
+%		\item Rate of convergence dependant on angles between lines
+%		\item Orthogonalization methods can improve convergence
+%		      \begin{itemize}
+%			      \item Computationally demanding
+%			      \item Amplifies noise
+%		      \end{itemize}
+%	\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Extensions to ART}
+%
+%	\begin{itemize}
+%		\item ``Ordered subsets'': Select sequence of projections in a clever way
+%		\item Simultaneous ART (SART): Do multiple updates at the same time and use the centroid:
+%
+%		      \begin{equation}
+%			      \vec{x}^{k+1} = \vec{x}^k + \lambda_k \sum_{i} u_{k,i} \frac{p_i - \vec{a}_i\vec{x}^k}{\vec{a}_i\vec{a}^\top_i}\vec{a}^\top_i
+%		      \end{equation}
+%		      with
+%		      \begin{equation}
+%			      \sum_{i}u_{k,i} = 1
+%		      \end{equation}
+%
+%		\item Other optimization approaches: gradient descent, expectation-maximization, regularized reconstruction, \ldots
+%	\end{itemize}
+%
+%\end{frame}
 
 \begin{frame}
 	\frametitle{Image Reconstruction}
@@ -1208,25 +1208,25 @@
 \section{Practical Considerations}
 \label{sec:ct_considerations}
 
-\subsection{From last lecture: Radiation sensitivity of eyes}
-
-\begin{frame}
-    \frametitle{From last lecture: Radiation sensitivity of eyes}
-      \begin{columns}
-		\begin{column}{0.5\textwidth}
-			 \begin{figure}
-        			\centering{}
-       			 \includegraphics[scale=0.25]{images/hamada_2017_eye_sensitivity_radiation.png}
-    			\end{figure}
-		\end{column}
-			\begin{column}{0.5\textwidth}
-			 \begin{figure}
-        			\centering{}
-       			 \includegraphics[scale=0.25]{images/hamada_2017_abstract.png}
-    			\end{figure}
-		\end{column}
-	\end{columns}
-\end{frame}
+%\subsection{From last lecture: Radiation sensitivity of eyes}
+%
+%\begin{frame}
+%    \frametitle{From last lecture: Radiation sensitivity of eyes}
+%      \begin{columns}
+%		\begin{column}{0.5\textwidth}
+%			 \begin{figure}
+%        			\centering{}
+%       			 \includegraphics[scale=0.25]{images/hamada_2017_eye_sensitivity_radiation.png}
+%    			\end{figure}
+%		\end{column}
+%			\begin{column}{0.5\textwidth}
+%			 \begin{figure}
+%        			\centering{}
+%       			 \includegraphics[scale=0.25]{images/hamada_2017_abstract.png}
+%    			\end{figure}
+%		\end{column}
+%	\end{columns}
+%\end{frame}
 
 %\begin{frame}
     %\frametitle{Radiation sensitivity of eyes}
