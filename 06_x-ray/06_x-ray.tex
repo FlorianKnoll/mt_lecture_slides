@@ -1031,16 +1031,16 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{ZnCdS vs. CsI - Spatial Resolution}
-    \begin{itemize}
-        \item  CsI can be manufactured with tubular structure
-        \item  Tubes act as optical-fibre and prevent scattering of light
-        \item  Produced light can be better assigned to incoming X-ray location
-    \end{itemize}
-    \begin{center}
-        \hspace{-2cm}\includegraphics[width=0.75\columnwidth]{images/CsI_structure}%
-    \end{center}
-\end{frame}
+%\begin{frame}{ZnCdS vs. CsI - Spatial Resolution}
+%    \begin{itemize}
+%        \item  CsI can be manufactured with tubular structure
+%        \item  Tubes act as optical-fibre and prevent scattering of light
+%        \item  Produced light can be better assigned to incoming X-ray location
+%    \end{itemize}
+%    \begin{center}
+%        \hspace{-2cm}\includegraphics[width=0.75\columnwidth]{images/CsI_structure}%
+%    \end{center}
+%\end{frame}
 
 \begin{frame}{Image Intensifiers -- Known Problems}
     \begin{itemize}
@@ -1112,18 +1112,18 @@
     \end{center}
 \end{frame}
 
-\begin{frame}{FPD -- Data Readout (Direct and Indirect)}
-    \begin{itemize}
-        \vspace{0.2cm}
-        \item After a certain time of radiation exposure each pixel will have charges in its storage capacitor
-        \item Read-out is done row-wise with a certain read-out frequency
-        \item Row is selected by switching on the Thin-Foil Transistors (TFT) of this row's pixels
-        \item Stored charges in pixels are directed to a charge integrating amplifier
-        \item After amplifier the datastream is digitized (analog-to-digital-conversion)
-        \item Data is directly sent to a computer system over a bus
-        \item Pixels can be combined (binning) to increase read-out speed and SNR
-    \end{itemize}
-\end{frame}
+%\begin{frame}{FPD -- Data Readout (Direct and Indirect)}
+%    \begin{itemize}
+%        \vspace{0.2cm}
+%        \item After a certain time of radiation exposure each pixel will have charges in its storage capacitor
+%        \item Read-out is done row-wise with a certain read-out frequency
+%        \item Row is selected by switching on the Thin-Foil Transistors (TFT) of this row's pixels
+%        \item Stored charges in pixels are directed to a charge integrating amplifier
+%        \item After amplifier the datastream is digitized (analog-to-digital-conversion)
+%        \item Data is directly sent to a computer system over a bus
+%        \item Pixels can be combined (binning) to increase read-out speed and SNR
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}{Sources of Noise}
     \begin{itemize}
@@ -1136,7 +1136,7 @@
         \item Both based on physical effects
         \item Difference: When scan is repeated with identical settings,
               \begin{itemize}
-                  \item artifacts (e.g., aliasing) will remain unchanged
+                  \item artifacts (e.g., vignetting effect) will remain unchanged
                   \item noise pattern will vary as it is a probabilistic effect
               \end{itemize}
         \item Prerequisites: Discrete statistical distributions
@@ -1152,7 +1152,7 @@
     \begin{columns}[c, onlytextwidth]
         \begin{column}{0.4\textwidth}
             \begin{itemize}
-                \item Poisson distribution is discrete distribution with density function:
+                \item Poisson distribution is discrete distribution with mass function:
                       \begin{equation*}
                           p(\mathcal{N}=n)=\frac{(N_{_0})^n}{n!}\,e^{-N_{_0}}
                       \end{equation*}
@@ -1190,9 +1190,10 @@
               \end{equation*}
         \item Probability that exactly $n$ positive outcomes occur for $N$ independent trials
         \item $p$ is the probability that a single trial has a positive outcome
+        \item For $n \rightarrow \infty$ and $p \rightarrow 0$: Poisson distribution
     \end{itemize}\vspace{0cm}
     \begin{center}
-        \includegraphics[width=0.3\columnwidth]{images/Binomi}%
+        \includegraphics[width=0.275\columnwidth]{images/Binomi}%
     \end{center}
 \end{frame}
 
@@ -1246,7 +1247,8 @@
               \begin{equation*}
                   p_a = e^{-\int \mu(s) ds}
               \end{equation*}
-        \item The probability that $n_s$ photons pass unaffected \textbf{and} that $N_x$ photons have been produced is called the \textbf{Joint Probability} $P(n_s,N_x)$
+        \item Probability that $n_s$ photons pass unaffected \textbf{and} that $N_x$ photons have been produced is called the \textbf{Joint Probability} $P(n_s,N_x)$
+        \item If you have binomial process following a Poisson process, it is still a Poisson process
               %\item From Bayes law we get:
               %\begin{equation*}
               %P(n_s,N_x) = P(N_x) \times P(n_s|N_x)
@@ -1302,14 +1304,17 @@
         \item For Poisson the expectation value equals the variance, thus $\mu = \sigma^2$
         \item Hence, $\mu = N_{_0} p_a$ and $\sigma = \sqrt{N_{_0} p_a}$
         \item The SNR after the X-rays pass through the patient computes to
+        \pause
               \vspace{0.25cm}
               \begin{eqnarray}
                   SNR(\mathcal{N}) &=& \frac{N_{_0}\,p_a}{\sqrt{N_{_0}\,p_a}} \nonumber\\[0.25cm]
                   &=& \sqrt{N_{_0} \,p_a} \nonumber\\[0.25cm]
                   &=& \sqrt{N_{_0}} \,\, e^{-\frac{1}{2}\int \mu(s) ds} \nonumber
               \end{eqnarray}
+        \pause
         \item SNR increases with the square root of the number of input photons
         \item High mass attenuation $\mu(s)$ or thick materials decrease the SNR
+        \item Different noise level in every pixel
     \end{itemize}
 \end{frame}
 
@@ -1328,34 +1333,35 @@
     \end{center}
 \end{frame}
 
-\begin{frame}[c]{Fluroscopy}
-    \begin{itemize}
-        \setlength\itemsep{0.4cm}
-        \item Sequence of radiography images with certain framerate
-        \item X-ray source either triggered or constant radiation
-        \item Framerate is typically limited by acquisition speed of detector
-              \begin{itemize}
-                  \item Image Intensifier: Inertia of final fluorescent screen
-                  \item FPDs: Electronic detector readout step
-              \end{itemize}
-        \item Important for minimally invasive interventions $\rightarrow$ catheters, endoscopes or other tools can be tracked over time
-        \item Also key technology for digital subtraction angiography
-    \end{itemize}
-\end{frame}
+%\begin{frame}[c]{Fluroscopy}
+%    \begin{itemize}
+%        \setlength\itemsep{0.4cm}
+%        \item Sequence of radiography images with certain framerate
+%        \item X-ray source either triggered or constant radiation
+%        \item Framerate is typically limited by acquisition speed of detector
+%              \begin{itemize}
+%                  \item Image Intensifier: Inertia of final fluorescent screen
+%                  \item FPDs: Electronic detector readout step
+%              \end{itemize}
+%        \item Important for minimally invasive interventions $\rightarrow$ catheters, endoscopes or other tools can be tracked over time
+%        \item Also key technology for digital subtraction angiography
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}{Fluroscopy}
     %
+ Sequence of radiography images with certain framerate
     \begin{columns}[t, onlytextwidth]
         \begin{column}{0.4\textwidth}
             \begin{figure}[htpb]
                 \centering
-            \includegraphics[height=0.6\textheight]{images/Fluoroscopy_pacemaker_leads_right_atrium_ventricle}%
+            \includegraphics[height=0.5\textheight]{images/Fluoroscopy_pacemaker_leads_right_atrium_ventricle}%
             \caption{Image of fluoroscopy sequence showing the placement of two electrodes of a pacemaker.}%
             \end{figure}
         \end{column}$\quad$\begin{column}{0.6\textwidth}
         \begin{figure}
             \centering
-            \includegraphics[height=0.6\textheight]{Siemens_Images/SH_AX_36710_13}%
+            \includegraphics[height=0.5\textheight]{Siemens_Images/SH_AX_36710_13}%
             \caption{Typical clinical setup of a minimally invasive surgery with a C-arm device. X-ray source at the bottom and the FPD is right above the patient.}%
         \end{figure}
         \end{column}
@@ -1365,8 +1371,6 @@
         \scriptsize Sources: Steven Fruitsmaak, Wikimedia Commons / Siemens Healthcare, Erlangen, Germany
     \end{flushright}
 \end{frame}
-
-
 
 \begin{frame}{Digital Subtraction Angiography --- Contrast Agent}
     \begin{itemize}
@@ -1380,17 +1384,17 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Digital Subtraction Angiography --- Principle}
-    \begin{itemize}
-        \item Fluroscopic sequence of fixed anatomy over time
-        \item Simultaneous injection of contrast agent into arteries
-        \item X-rays without contrast = Background tissue
-        \item Subtract non-contrasted reference image from contrasted images
-        \item Subtraction will result in image of contrasted arteries only
-        \item Non-contrasted image = ``mask image''
-        \item Contrasted images = ``fill images''
-    \end{itemize}
-\end{frame}
+%\begin{frame}{Digital Subtraction Angiography --- Principle}
+%    \begin{itemize}
+%        \item Fluroscopic sequence of fixed anatomy over time
+%        \item Simultaneous injection of contrast agent into arteries
+%        \item X-rays without contrast = Background tissue
+%        \item Subtract non-contrasted reference image from contrasted images
+%        \item Subtraction will result in image of contrasted arteries only
+%        \item Non-contrasted image = ``mask image''
+%        \item Contrasted images = ``fill images''
+%    \end{itemize}
+%\end{frame}
 
 \begin{frame}[c]{Digital Subtraction Angiography --- Example}
     \begin{figure}[tb]%
