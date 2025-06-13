@@ -56,67 +56,67 @@
 	\tableofcontents
 \end{frame}
 
-\section{CT Measurement Process Reviewed}
-
-\begin{frame}
-    \frametitle{Hardware Setup}
-    \begin{itemize}
-        \item Classical fan beam geometry:
-    \end{itemize}
-    \begin{figure}
-        \centering{}
-        \includegraphics[scale=0.35]{images/multict.eps}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Sinogram}
-    \begin{minipage}{0.52\textwidth}
-        \begin{figure}
-            \centering{}
-            \includegraphics[scale=.30]{images/sinogram.eps}
-        \end{figure}
-    \end{minipage}
-    \begin{minipage}{0.45\textwidth}
-        \begin{figure}
-            \centering{}
-            \includegraphics[scale=.35]{images/multict2.eps}
-        \end{figure}
-    \end{minipage}
-\end{frame}
-
-\begin{frame}{Projection Signal}
-
-    \begin{columns}[c, onlytextwidth]
-        \begin{column}{0.6\textwidth}
-            Signal for single reading: \\
-            \psfrag{ln}{{\LARGE $p(\Theta, s)$}}
-            \includegraphics[width=0.8\textwidth]{images/projsig.eps}\\
-            Measured intensity for a ray $l$:
-            \begin{eqnarray*}
-                p(\Theta, s) = \int{\mu}(l)dl
-            \end{eqnarray*}
-        \end{column}\begin{column}{0.4\textwidth}
-            \begin{figure}
-                \psfrag{l}{\LARGE{$\mu(l)$}}
-                \includegraphics[width=0.8\textwidth]{images/multict3.eps}
-            \end{figure}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{Attenuation Law}
-    \begin{align*}
-        p^{\star}(\Theta, s)                               & = I_0 \cdot \exp\left(-\int	\mu(l)dl\right) \\
-        -\ln\left(\dfrac{p^{\star}(\Theta, s)}{I_0}\right) & = p(\Theta, s) \tag{Radon transform}
-    \end{align*}
-    \begin{itemize}
-        \item $p^{\star}(\Theta, s)$ denotes the measured X-ray intensity
-        \item $I_0$ is the measured X-ray intensity without any attenuator
-        \item $\mu(\vec x)$ is the \textit{linear attenuation coefficient} of the object at location $\vec x = (x ,y)$
-        \item Reconstruction of $\mu(\vec x)$ from projections $p(\Theta, s)$\\ (e.\,g.\ by Iterative Reconstruction or Filtered Backprojection)
-    \end{itemize}
-\end{frame}
+%\section{CT Measurement Process Reviewed}
+%
+%\begin{frame}
+%    \frametitle{Hardware Setup}
+%    \begin{itemize}
+%        \item Classical fan beam geometry:
+%    \end{itemize}
+%    \begin{figure}
+%        \centering{}
+%        \includegraphics[scale=0.35]{images/multict.eps}
+%    \end{figure}
+%\end{frame}
+%
+%\begin{frame}
+%    \frametitle{Sinogram}
+%    \begin{minipage}{0.52\textwidth}
+%        \begin{figure}
+%            \centering{}
+%            \includegraphics[scale=.30]{images/sinogram.eps}
+%        \end{figure}
+%    \end{minipage}
+%    \begin{minipage}{0.45\textwidth}
+%        \begin{figure}
+%            \centering{}
+%            \includegraphics[scale=.35]{images/multict2.eps}
+%        \end{figure}
+%    \end{minipage}
+%\end{frame}
+%
+%\begin{frame}{Projection Signal}
+%
+%    \begin{columns}[c, onlytextwidth]
+%        \begin{column}{0.6\textwidth}
+%            Signal for single reading: \\
+%            \psfrag{ln}{{\LARGE $p(\Theta, s)$}}
+%            \includegraphics[width=0.8\textwidth]{images/projsig.eps}\\
+%            Measured intensity for a ray $l$:
+%            \begin{eqnarray*}
+%                p(\Theta, s) = \int{\mu}(l)dl
+%            \end{eqnarray*}
+%        \end{column}\begin{column}{0.4\textwidth}
+%            \begin{figure}
+%                \psfrag{l}{\LARGE{$\mu(l)$}}
+%                \includegraphics[width=0.8\textwidth]{images/multict3.eps}
+%            \end{figure}
+%        \end{column}
+%    \end{columns}
+%\end{frame}
+%
+%\begin{frame}{Attenuation Law}
+%    \begin{align*}
+%        p^{\star}(\Theta, s)                               & = I_0 \cdot \exp\left(-\int	\mu(l)dl\right) \\
+%        -\ln\left(\dfrac{p^{\star}(\Theta, s)}{I_0}\right) & = p(\Theta, s) \tag{Radon transform}
+%    \end{align*}
+%    \begin{itemize}
+%        \item $p^{\star}(\Theta, s)$ denotes the measured X-ray intensity
+%        \item $I_0$ is the measured X-ray intensity without any attenuator
+%        \item $\mu(\vec x)$ is the \textit{linear attenuation coefficient} of the object at location $\vec x = (x ,y)$
+%        \item Reconstruction of $\mu(\vec x)$ from projections $p(\Theta, s)$\\ (e.\,g.\ by Iterative Reconstruction or Filtered Backprojection)
+%    \end{itemize}
+%\end{frame}
 
 
 \section{X-ray Attenuation with Polychromatic Radiation}
@@ -124,7 +124,7 @@
 \begin{frame}[c]{Monoenergetic vs. Polyenergetic Attenuation}
     \begin{itemize}
         \setlength\itemsep{0.4cm}
-        \item \textbf{Problem:} The previous formula only holds for monoenergetic X-ray sources
+        \item \textbf{Problem:} We assumed monoenergetic X-ray sources
         \item X-ray tubes for medical CT have a continuous X-ray spectrum
         \item Sources for monoenergetic radiation like synchrotrons or radioactive elements are not suitable for medical CT
         \item \textbf{Traditional solution:} Apply standard reconstruction methods and correct for resulting \textit{beam hardening artifact}
