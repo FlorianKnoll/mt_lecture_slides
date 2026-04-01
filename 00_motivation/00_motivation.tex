@@ -1,4 +1,5 @@
 \input{../preamble}
+\usepackage{soul} % For strike through
 
 \subtitle{Motivation}
 
@@ -18,7 +19,7 @@
 		\begin{itemize}
 			\item \url{https://idea.tf.fau.eu/}
 			\item \url{https://cil.tf.fau.de/}
-			\item Werner-von-Siemens Strasse 61
+			\item Nuernberger-Strasse 74
 		\end{itemize}
 		\item Lecturers:
 		\begin{itemize}
@@ -28,12 +29,12 @@
 		\item Exercise/Project Team
 		\begin{itemize}
 			\item Organization: \tabto{3cm} Annika Hofmann
-			\item Blackboard Exercise: \tabto{3cm} Dr.\ Zhengguo Tan, Erik G\"osche
+			\item Blackboard Exercise: \tabto{3cm} Erik G\"osche, Nils Dienesch
 			\item Final Project: \tabto{3cm} Mischa Dombrowski
-			\item Homework Tasks: \tabto{3cm} Johanna M\"uller, Jinho Kim
-			\item Student Tutors: \tabto{3cm} Anna Susic, Peter Jakubec, Sebastian Dietz
+			\item Homework Tasks: \tabto{3cm} Johanna M\"uller, Haiting Huang
+			\item Student Tutors: \tabto{3cm} Kathrin M\"arz, Jacob Plentinger, Leonie Schmutzler, Kathy Vo
 		\end{itemize}
-		\item Contact: \texttt{\url{https://www.studon.fau.de/frm5533686.html}}
+		\item Contact: \texttt{\url{https://www.studon.fau.de/studon/go/crs/6732094}}
 	\end{itemize}
 \end{frame}
 
@@ -112,13 +113,14 @@
 05.05.26                 & Ultrasound 1	                					&                      \\
 06.05.26                 & Ultrasound 2: Applications and demo		&                      \\
 12.05.26                 & OCT									&                      \\
-13.05.26                 & X-ray 1: Ray generation)					&                      \\
+13.05.26                 & X-ray 1: Ray generation					&                      \\
 19.05.26                 & X-ray 2: Matter interaction, imaging 			&                      \\
 20.05.26                 & CT 1: Basic concepts, reconstruction		&                      \\
-26.05.26                 & CT 2: Resolution, noise, artifacts, spectral CT	&                      \\
-27.05.26                 & MRI 1: Nuclear magnetic resonance     		&                      \\
-02.06.26                 & MRI 2: Imaging							&  			\\
-03.06.26                 & Nuclear medicine						&
+\st{26.05.26}           & No lecture (Bergdienstag)					&                      \\
+27.05.26                 & CT 2: Resolution, noise, artifacts, spectral CT	&                      \\
+02.06.26                 & MRI 1: Nuclear magnetic resonance 		&  			\\
+03.06.26                 & MRI 2: Imaging							&			\\
+09.06.26                 & Nuclear medicine						&
 \end{tabular}
 \end{table}
 }
@@ -128,7 +130,7 @@
 	\frametitle{Exercises}
 	\begin{block}{Homework}
 		\begin{itemize}
-			\item Six exercises during semester
+			\item Five exercises during semester
 			\item Each exercise consists of theory (10 points) and programming (10 points) tasks
 			% \item Minimum requirement for passing: 30 points theory and 30 points programming
 			\item Theory tasks: Online StudOn test, individually
@@ -136,13 +138,13 @@
 		\end{itemize}
 		\begin{center}
 			\begin{tabular}{c | c | c | c}
-				\# & Handout (Mon) 	& Blackboard exercise (Thu 14:15)	& Submission (Sun 23:00) \\ \hline
-				1  & 22.04.24    	& 25.04.24               				& 05.05.24       \\
-				2  & 29.04.24    	& 02.05.24                				& 19.05.24       \\
-				3  & 20.05.24    	& 23.05.24                				& 02.06.24       \\
-				4  & 03.06.24    	& 06.06.24                				& 16.06.24       \\
-				5  & 17.06.24    	& 20.06.24                				& 07.07.24       \\
-				6  & 08.07.24    	& 11.07.24                				& 21.07.24       \\
+				\# & Handout (Mon) 	& Blackboard exercise (Wed 12:15)	& Submission (Sun 23:00) \\ \hline
+				1  & 20.04.26    	& 22.04.26               				& 26.04.26       \\
+				2  & 27.04.26    	& 29.04.26                				& 03.05.26       \\
+				3  & 04.05.26    	& 06.05.26                				& 10.05.26       \\
+				4  & 25.05.26    	& 20.05.26 (online)               	    & 31.05.26       \\
+				5  & 01.06.26    	& 27.05.26                				& 14.06.26       \\
+				6  & --    			& 03.06.26                				& --       \\
 			\end{tabular}
 		\end{center}
 	\end{block}
@@ -152,7 +154,7 @@
 	\frametitle{Exercises}
 	\begin{block}{Homework}
 		\begin{itemize}
-			\item Six exercises during semester
+			\item Five exercises during semester
 			\item Each exercise consists of theory (10 points) and programming (10 points) tasks
 			% \item Minimum requirement for passing: 30 points theory and 30 points programming
 			\item Theory tasks: Online StudOn test, individually
@@ -166,7 +168,6 @@
 				3  & Filter processing  				& Optics, Ultrasound           \\
 				4  & Xray    						& Xray                	      \\
 				5  & CT    							& CT                		     \\
-				6  & MRI    						& MRI                	     \\
 			\end{tabular}
 		\end{center}
 	\end{block}
@@ -177,20 +178,19 @@
 	\begin{block}{Blackboard Exercises}
 		\begin{itemize}
 			\item Repeat and deepen lecture content related to homework and project
-			\item Biweekly after lecture (14:15), starting on 25.04.2023
-			\item HS20 and same hybrid setting as lecture
+			\item HS19 in person only
 		\end{itemize}
 	\end{block}
 	\begin{block}{Computer Exercises}
 		\begin{itemize}
 			\item Support for programming tasks by student tutors
-			\item CIP1 (Room 01.155-113, CS Building, Martensstr. 3)
-			\item Schedule (starting on 22.04.2024)
+			\item Capacity: max 25 Students
+			\item Schedule (starting on 20.04.2026)
 			\begin{itemize}
-				\item MON 10:00 -- 12:00
-				\item TUE 08:00 -- 10:00
-				\item THU 16:00 -- 18:00
-				\item FR 12:00 -- 14:00
+				\item Mo 14:15 - 15:45 CIP2
+				\item Tu 08:15 - 09:45 CIP1
+				\item We 08:15 - 09:45 CIP1
+				\item Fr 10:15 - 11:45 CIP2
 			\end{itemize}
 		\end{itemize}
 	\end{block}
@@ -209,14 +209,14 @@
 		\end{itemize}
 		\item Consists of two parts:
 		\begin{enumerate}
-			\item Writing of a scientific report
+			\item Writing of a short scientific report
 			\item Practical: programming an ImageJ plugin in Java
 		\end{enumerate}
 		\item Timeline
 		\begin{itemize}
 			\item Handout in June (exact date tba)
 			\item Submission deadline in August (exact date tba)
-			\item Potentially additional blackboard excercise on 27.06.2024
+			\item Potentially additional blackboard excercise (watch StudOn for updates)
 		\end{itemize}
 	\end{itemize}
 \end{frame}
